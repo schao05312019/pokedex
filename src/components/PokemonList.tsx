@@ -21,7 +21,3 @@ const PokemonList = ({pokemons} : PokemonListProps) => {
 };
 
 export default PokemonList;
-
-
-//https://pokeapi.co/
-//https://pokeapi.co/api/v2

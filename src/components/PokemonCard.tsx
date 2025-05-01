@@ -1,6 +1,7 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ListPokemon } from "../interfaces/pokemon.interface";
 import { getColorFromUrl } from "../utils/colors";
 
@@ -24,6 +25,7 @@ const PokemonCard = ({pokemon} : PokemonCardProps) => {
     return (
         <Card sx={{backgroundColor: pokemonColor}}>
             <CardActionArea>
+                <Link to={`pokemon/${pokemon.name}`} style={{textDecoration:"none", color:"white"}}>
                 <CardMedia component="img"
                     image={pokemon.image} title={pokemon.name} sx={{height:100, objectFit:"contain"}}
                 />
@@ -43,6 +45,7 @@ const PokemonCard = ({pokemon} : PokemonCardProps) => {
                         </Typography>
                     </Box>
                 </CardContent>
+                </Link>
             </CardActionArea>
         </Card>
     );
